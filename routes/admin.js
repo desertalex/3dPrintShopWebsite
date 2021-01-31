@@ -6,6 +6,10 @@ const adminController = require('../controllers/admin');
 
 const router = express.Router();
 
+router.get('/', adminController.getAdmin);
+
+router.post('/login', adminController.postLogin);
+
 // /admin/add-product => GET
 router.get('/add-product', adminController.getAddProduct);
 

@@ -1,4 +1,27 @@
+const { redirect } = require('statuses');
 const Product = require('../models/product');
+
+exports.getAdmin = (req, res, next) => {
+  res.render('admin/login', {
+    pageTitle: 'Admin Login',
+    path: '/admin',
+    editing: false,
+    unsuccessful: false
+  });
+};
+
+exports.postLogin = (req, res, next) => {
+  if(req.body.username === 'admin' && req.body.password === 'password') {
+    res.redirect('/admin/products')
+  } else {
+    res.render('admin/login', {
+      pageTitle: 'Admin Login',
+      path: '/admin',
+      editing: false,
+      unsuccessful: true
+    });
+  }
+}
 
 exports.getAddProduct = (req, res, next) => {
   res.render('admin/edit-product', {

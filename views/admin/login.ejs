@@ -6,8 +6,11 @@
 <body>
    <%- include('../includes/navigation.ejs') %>
 
-    <main>
-        <form class="product-form" action="/admin/add-product" method="POST">
+    <main>    
+        <form class="product-form" action="/admin/login" method="POST">
+            <% if (unsuccessful === true) { %>
+                <p style="color: red;">Login failed</p>
+            <% } %> 
             <div class="form-control">
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username">
