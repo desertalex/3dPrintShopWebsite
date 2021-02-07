@@ -6,21 +6,21 @@
 <body>
    <%- include('../includes/navigation.ejs') %>
 
-    <main>    
-        <form class="product-form" action="/admin/login" method="POST">
-            <% if (unsuccessful === true) { %>
-                <p style="color: red;">Login failed</p>
-            <% } %> 
+    <main>  <!-- Change product-form to login-form if wanted -->  
+        <% if (errorMessage) { %> 
+            <div class="user-message user-message--error"><%= errorMessage %></div>
+        <% } %> 
+        <form class="product-form" action="/login" method="POST">
             <div class="form-control">
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email">
             </div>
             <div class="form-control">
                 <label for="password">Password</label>
-                <input type="text" name="password" id="password">
+                <input type="password" name="password" id="password">
             </div>
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <button class="btn" type="submit">Verify</button>
+            <button class="btn" type="submit">Login</button>
         </form>
     </main>
 <%- include('../includes/end.ejs') %>
