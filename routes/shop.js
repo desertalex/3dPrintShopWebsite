@@ -5,6 +5,10 @@ const router = express.Router();
 
 router.get('/', shopController.getIndex);
 
+router.get('/products/vr', shopController.getProductsVr);
+router.get('/products/miniatures', shopController.getProductsMiniatures);
+router.get('/products/other', shopController.getProductsOther);
+
 router.get('/products', shopController.getProducts);
 
 router.get('/products/:productId', shopController.getProduct);

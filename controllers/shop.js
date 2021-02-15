@@ -15,6 +15,49 @@ exports.getProducts = (req, res, next) => {
     });
 };
 
+exports.getProductsVr = (req, res, next) => {
+  Product.find()
+    .then(products => {
+      res.render('shop/vr-products', {
+        prods: products,
+        pageTitle: 'VR Products',
+        path: '/products'
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+exports.getProductsMiniatures = (req, res, next) => {
+  Product.find()
+    .then(products => {
+      res.render('shop/miniatures-products', {
+        prods: products,
+        pageTitle: 'Miniature Products',
+        path: '/products'
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+exports.getProductsOther = (req, res, next) => {
+  Product.find()
+    .then(products => {
+      res.render('shop/other-products', {
+        prods: products,
+        pageTitle: 'Other Products',
+        path: '/products'
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+
 exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
   Product.findById(prodId)

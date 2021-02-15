@@ -9,7 +9,7 @@
         <% if (prods.length > 0) { %>
             <div class="grid">
                 <% for (let product of prods) { %>
-                    <% if (product.featured) { %>
+                    <% if (product.catagory === 'other') { %>
                         <article class="card product-item">
                             <header class="card__header">
                                 <h1 class="product__title"><%= product.title %></h1>

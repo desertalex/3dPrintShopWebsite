@@ -23,6 +23,14 @@ const productSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
+    },
+    featured: {
+        type: Boolean,
+        required: false
+    },
+    catagory: {
+        type: String,
+        required: true
     }
 });
 
