@@ -25,5 +25,13 @@
     "start": "nodemon index.js"
   },
   "author": "Alex Braddock",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desertalex/3dPrintShopWebsite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/desertalex/3dPrintShopWebsite/issues"
+  },
+  "homepage": "https://github.com/desertalex/3dPrintShopWebsite#readme"
 }
